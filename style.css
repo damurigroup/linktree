@@ -1,9 +1,9 @@
 *{box-sizing:border-box}
 :root{
   --bg:#0A1217;
-  --text:#171717;
+  --text:#fff;
   --muted:#706d68;
-  --button:#171717;
+  --button:#42C7F4;
   --button-text:#fff;
   --max:560px;
 }

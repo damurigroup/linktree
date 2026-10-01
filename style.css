@@ -63,7 +63,7 @@ footer{
 @media (max-height:520px) and (orientation:landscape){
   .page{padding-top:18px}
   .profile{margin:0}
-  .logo{width:150px;max-height:90px;margin-bottom:10px}
+  .logo{width:180px;max-height:90px;margin-bottom:10px}
   .subtitle{margin:8px auto 15px}
   footer{padding-top:14px}
 }

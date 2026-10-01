@@ -34,7 +34,7 @@ h1{
   line-height:1;letter-spacing:.16em;font-weight:650;
 }
 .subtitle{
-  max-width:420px;margin:14px auto 30px;color:var(--muted);
+  max-width:420px;margin:14px auto 30px;color:var(--text);
   font-size:clamp(.95rem,3vw,1.05rem);line-height:1.55;
 }
 .links{width:100%}

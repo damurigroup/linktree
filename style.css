@@ -1,0 +1,71 @@
+*{box-sizing:border-box}
+:root{
+  --bg:#f3f1ed;
+  --text:#171717;
+  --muted:#706d68;
+  --button:#171717;
+  --button-text:#fff;
+  --max:560px;
+}
+html{min-height:100%;background:var(--bg)}
+body{
+  margin:0;min-width:280px;min-height:100svh;
+  color:var(--text);
+  background:radial-gradient(circle at 50% -10%,#fff 0,transparent 43%),var(--bg);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.page{
+  min-height:100svh;width:100%;
+  padding:max(32px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right))
+          max(20px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));
+  display:flex;flex-direction:column;align-items:center;
+}
+.profile{
+  width:min(100%,var(--max));
+  margin:auto 0;text-align:center;
+}
+.logo{
+  display:block;width:clamp(90px,24vw,140px);max-height:110px;
+  object-fit:contain;margin:0 auto 24px;
+}
+h1{
+  margin:0;font-size:clamp(1.8rem,6vw,2.55rem);
+  line-height:1;letter-spacing:.16em;font-weight:650;
+}
+.subtitle{
+  max-width:420px;margin:14px auto 30px;color:var(--muted);
+  font-size:clamp(.95rem,3vw,1.05rem);line-height:1.55;
+}
+.links{width:100%}
+.button{
+  width:100%;min-height:64px;padding:12px 18px;
+  display:grid;grid-template-columns:28px 1fr 28px;gap:10px;align-items:center;
+  color:var(--button-text);background:var(--button);
+  border-radius:18px;text-decoration:none;font-size:1rem;font-weight:650;
+  box-shadow:0 10px 30px rgba(0,0,0,.10);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.download,.arrow{font-size:1.35rem;line-height:1}
+.note{margin:16px 0 0;color:var(--muted);font-size:.78rem}
+footer{
+  width:min(100%,var(--max));padding-top:28px;text-align:center;
+  color:var(--muted);font-size:.72rem;letter-spacing:.08em;
+}
+@media (hover:hover) and (pointer:fine){
+  .button:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.15)}
+}
+@media (max-width:480px){
+  .page{padding-left:16px;padding-right:16px}
+  .profile{margin-top:max(42px,9svh);margin-bottom:auto}
+  .button{min-height:60px;border-radius:16px}
+}
+@media (max-height:520px) and (orientation:landscape){
+  .page{padding-top:18px}
+  .profile{margin:0}
+  .logo{width:70px;max-height:56px;margin-bottom:10px}
+  .subtitle{margin:8px auto 15px}
+  footer{padding-top:14px}
+}
+.button:focus-visible{outline:3px solid #555;outline-offset:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

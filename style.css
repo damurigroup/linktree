@@ -38,15 +38,42 @@ h1{
   font-size:clamp(.95rem,3vw,1.05rem);line-height:1.55;
 }
 .links{width:100%}
+
+/* FIX: flex invece della griglia a 3 colonne.
+   In questo modo icona, testo e freccia non vengono separati
+   o mandati a capo in modo anomalo sugli smartphone. */
 .button{
-  width:100%;min-height:64px;padding:12px 18px;
-  display:grid;grid-template-columns:28px 1fr 28px;gap:10px;align-items:center;
-  color:var(--button-text);background:var(--button);
-  border-radius:18px;text-decoration:none;font-size:1rem;font-weight:650;
+  width:100%;
+  min-height:64px;
+  padding:12px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:var(--button-text);
+  background:var(--button);
+  border-radius:18px;
+  text-decoration:none;
+  text-align:center;
+  font-size:1rem;
+  font-weight:650;
+  line-height:1.2;
   box-shadow:0 10px 30px rgba(0,0,0,.10);
   transition:transform .18s ease,box-shadow .18s ease;
 }
-.download,.arrow{font-size:1.35rem;line-height:1}
+
+.download{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.35rem;
+  line-height:1;
+}
+
+/* La seconda freccia del vecchio layout non serve */
+.arrow{display:none}
+
 .note{margin:16px 0 0;color:var(--muted);font-size:.78rem}
 footer{
   width:min(100%,var(--max));padding-top:28px;text-align:center;
@@ -58,7 +85,12 @@ footer{
 @media (max-width:480px){
   .page{padding-left:16px;padding-right:16px}
   .profile{margin-top:max(42px,9svh);margin-bottom:auto}
-  .button{min-height:60px;border-radius:16px}
+  .button{
+    min-height:60px;
+    padding:14px 18px;
+    border-radius:16px;
+    white-space:normal;
+  }
 }
 @media (max-height:520px) and (orientation:landscape){
   .page{padding-top:18px}
